@@ -1,0 +1,39 @@
+<div id="homelink">
+<%= image_tag("contacticon.jpeg") %>
+</div>
+<div id="Heading">
+	<h1>Displaying All Contacts</h1>
+</div>
+<div id="DisplaypageListSection">
+	<%= link_to(image_tag("addnewicon.png"),{:action =>'new'},:id => "Link_with_image_addnew")%>	
+	<h3>All Contacts</h3><br>
+	<%= form_tag ({:action =>'search'}) do %>
+		<%= text_field_tag ('FirstName'),"",:class => "SearchInput"%>		
+		<%= submit_tag (''),:class => "button_with_image_search"%>
+	<% end %>	
+	<table id="listingtable">	
+		<% @contact.each do |contact_var| %>
+			<tr><td>
+				<% if contact_var.LastName.nil?
+					name=contact_var.FirstName
+				   else
+					 name=contact_var.FirstName+" "+contact_var.LastName 
+				   end %>
+				<%= link_to(name,{:action => 'display',:id => contact_var.id},:class => "link")%>
+			</td></tr>
+		<% end %>	
+	</table>
+</div>
+<div id="DisplaypageDetailsSection">
+	<h3><center>Contact Details</center></h3>
+	<table id="DisplayPageDetailsTable">
+	<tr> <th>First Name</th>	<td> <%= @contact_detail.FirstName %></td>	</tr>
+	<tr><th>Last Name</th>	<td> <%= @contact_detail.LastName %></td>	</tr>
+ 	<tr><th>Date Of Birth</th>	<td> <%= @contact_detail.DOB %></td>		</tr>
+	<tr><th>Phone Number</th>	<td> <%= @contact_detail.PhoneNumber %></td>	</tr>
+	<tr><th>Address</th> 	<td> <%= @contact_detail.Address %></td>	</tr>
+	<tr><th>email</th>		<td> <%= @contact_detail.email %></td>		</tr>
+	<tr><td><%= link_to("Edit",{:action =>'edit',:id=>@contact_detail.id},:class => "link")%></td>		
+		<td><%= link_to("Delete",{:action =>'delete',:id=>@contact_detail.id},:class => "link")%></td>		</tr>
+	</table>
+</div>

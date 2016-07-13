@@ -1,0 +1,138 @@
+// Place all the styles related to the HomePage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+background-color:#99ff99;    
+color: green;
+margin: 0;
+padding: 0;
+font-family:"Georgia";
+}
+h1,h2,h3{
+display:inline;
+}
+
+input:focus {
+    border: 3px solid #ccc;
+}
+
+img{
+display:inline;
+}
+
+.button_with_image_search {
+    background: url('searchicon.png') #f2efa8 no-repeat 3px 0px;
+    text-indent:30px;
+    cursor: pointer;
+    height:35px;
+    width:40px;
+}
+
+#Link_with_image_addnew {
+    cursor: pointer;
+    float:right;
+}
+
+.SearchInput{
+    height:35px;
+    width:30%;
+    background-color: white;
+    padding: 6px 10px 6px 20px;
+    transition: width 0.4s ease-in-out;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+}
+.SearchInput:focus {width: 80%;}
+
+.link{
+	text-weight:bold;		
+}
+
+#Heading{
+	text-align:center;
+}
+
+#DisplaypageListSection{
+	line-height:30px;
+	height:460px;
+	width:30%;
+	float:left;
+	overflow-y: scroll;
+	table{	
+	font-size:25px;
+	text-align:justify;
+	}
+	form{padding:2px}
+	a:link {
+   		text-decoration: none;
+		color:green;
+		text-transform: capitalize;
+		}
+	a:hover {
+    		font-weight:bold;
+		text-shadow: 2px 2px #242a22;
+		}
+	a:visited{color:green}
+}
+
+#DisplaypageDetailsSection{
+	line-height:30px ;
+	height:460px;
+	width:70%;
+	float:left;
+	tr:hover{background-color:#e0e0e0; }
+	table{	
+		width:100%;
+		text-align:justify;
+	}
+
+}
+
+#SearchSection{
+text-align:center;
+height:250px;
+}
+
+#DetailsSection{
+text-align:center;
+tr:hover{
+background-color:#e0e0e0; 
+}
+table{	
+width:100%;
+margin: auto;
+}
+
+}
+
+
+#form{
+	width:100%;
+	input,textarea{
+    	width: 100%;
+    	padding: 12px 20px;
+    	margin: 8px 0;
+    	box-sizing: border-box;
+    	border: 2px solid green;
+    	border-radius: 4px;
+    	color: green;
+	}
+	input[type=submit]{display:none}
+}
+
+#homelink{
+	line-height:30px;
+	height:120px;
+	width:15%;
+	float:left;
+}
+
+#Heading{
+	font-weight: bold;
+	line-height:30px;
+	height:120px;
+	width:85%;
+	float:left;
+}
+
+

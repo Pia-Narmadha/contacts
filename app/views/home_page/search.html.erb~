@@ -1,0 +1,39 @@
+<div id="homelink"> 
+	<%= link_to(image_tag("backicon.png"),{:action =>'display'},:class => "homelink")%> 
+</div>
+<div id="Heading">
+	<h3>SearchFor Contacts</h3>
+</div>
+<div id="SearchSection">
+	<h3>Enter a contact First name to search</h3>
+	<br>
+	<%= form_tag ({:action =>'search'}) do %>
+		<%= text_field_tag ('FirstName'),"",:class => "SearchInput"%>		
+		<%= submit_tag (''),:class => "button_with_image_search"%>
+	<% end %>
+</div>
+<div id="DetailsSection">
+	<h3>Contacts that match your search are listed below</h3>
+	<table>
+	<tr> 
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Date Of Birth</th> 
+	<th>Phone Number</th>
+	<th>Address</th>
+	<th>email</th>
+	</tr>
+	<% @contact.each do |contact| %>
+	<tr>
+	<td> <%= contact.FirstName %></td>
+	<td> <%= contact.LastName %></td>
+ 	<td> <%= contact.DOB %></td>
+	<td> <%= contact.PhoneNumber %></td>
+	<td> <%= contact.Address %></td>
+	<td> <%= contact.email %></td>
+	<td> <%= link_to("Edit",{:action =>'edit',:id=>contact.id},:class => "link")%> </td>
+	<td> <%= link_to("Delete",{:action =>'delete',:id=>contact.id},:class => "link")%> </td>
+	</tr>
+	<% end %>
+	</table>
+</div>

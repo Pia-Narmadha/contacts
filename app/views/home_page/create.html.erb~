@@ -1,0 +1,22 @@
+<h1>create</h1>
+<%= form_for (:contact ,:url=>{:action => create}) do |f| %>
+	<table>
+	<tr>
+		<td>FirstName:</td><td><%=f.text_field(:FirstName) %></td>	
+	</tr>
+	<tr>
+		<td>LastName:</td><td><%=f.text_field(:LastName) %></td>	
+	</tr>
+	<tr>
+		<td>DOB:</td><td><%=f.text_field(:DOB) %></td>	
+	</tr>
+	<tr>
+		<td>Address:</td><td><%=f.text_field(:Address) %></td>	
+	</tr>
+	<tr>
+		<td>PhoneNumber:</td><td><%=f.text_field(:PhoneNumber) %></td>	
+	</tr>
+	<tr>
+		<td>email:</td><td><%=f.text_field(:email) %></td>	
+	</tr>
+	</table>

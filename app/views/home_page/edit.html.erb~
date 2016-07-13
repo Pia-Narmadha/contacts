@@ -1,0 +1,33 @@
+<div id="homelink"> 
+	<%= link_to(image_tag("backicon.png"),{:action =>'display'},:class => "homelink")%> 
+</div>
+<div id="Heading">
+	<h1>Editing A Contact</h1>
+</div>
+<div id="form">
+<%= form_for(:contact, :url=> {:action =>'update', :id =>@contact.id},:name=>"newform")  do |f| %>
+	<table>
+	<tr>
+		<td>FirstName:</td><td><%=f.text_field(:FirstName) %></td>	
+	</tr>
+	<tr>
+		<td>LastName:</td><td><%=f.text_field(:LastName) %></td>	
+	</tr>
+	<tr>
+		<td>DOB:</td><td><%= f.date_field(:DOB) %></td>	
+	</tr>
+	<tr>
+		<td>Address:</td><td><%= f.text_area(:Address) %></td>	
+	</tr>
+	<tr>
+		<td>PhoneNumber:</td><td><%= f.telephone_field(:PhoneNumber) %></td>	
+	</tr>
+	<tr>
+		<td>email:</td><td><%= f.email_field(:email) %></td>	
+	</tr>
+	<tr>
+		<td colspan=2>  <%= submit_tag('Update') %> </td>
+	</tr>
+	</table>
+<% end %>
+</div>
